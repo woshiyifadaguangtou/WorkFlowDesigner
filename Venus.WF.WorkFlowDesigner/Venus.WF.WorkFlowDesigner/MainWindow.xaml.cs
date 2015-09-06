@@ -23,6 +23,27 @@ namespace Venus.WF.WorkFlowDesigner
         public MainWindow()
         {
             InitializeComponent();
+            this.GoFullScreen();
+            InitEvent();
+        }
+
+        private void InitEvent()
+        {
+            this.KeyDown += delegate(object sender, KeyEventArgs e)
+            {
+                if (e.Key == Key.F)
+                {
+                    this.GoFullScreen();
+                }
+                else if (e.Key == Key.E)
+                {
+                    this.ExitFullScreen();
+                }
+                else if (e.Key == Key.Escape)
+                {
+                    this.Close();
+                }
+            };
         }
     }
 }
