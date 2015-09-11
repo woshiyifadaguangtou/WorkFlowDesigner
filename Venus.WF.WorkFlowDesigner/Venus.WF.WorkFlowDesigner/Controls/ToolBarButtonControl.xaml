@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Venus.WF.WorkFlowDesigner.Controls.ToolBarButtonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="50" 
+             >
+    <Grid Cursor="Hand">
+        <Rectangle x:Name="RecObject" Fill="Red" RadiusX="7" RadiusY="7"></Rectangle>
+        <TextBlock x:Name="TextObject" Text="Block" Foreground="Black" FontSize="20"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-10,0,0"></TextBlock>
+    </Grid>
+</UserControl>
