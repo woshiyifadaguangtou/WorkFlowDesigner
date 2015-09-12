@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\ElementControls\EndEvents\NoneEndEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ElementControls\StartEvents\NoneStartEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImageButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\MenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +87,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\ElementControls\EndEvents\NoneEndEventControl.xaml.cs">
+      <DependentUpon>NoneEndEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ElementControls\IElementControl.cs" />
+    <Compile Include="Controls\ElementControls\StartEvents\NoneStartEventControl.xaml.cs">
+      <DependentUpon>NoneStartEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ElementControls\IElementControlExpend.cs" />
+    <Compile Include="Controls\ImageButtonControl.xaml.cs">
+      <DependentUpon>ImageButtonControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MenuControl.xaml.cs">
       <DependentUpon>MenuControl.xaml</DependentUpon>
     </Compile>
@@ -85,7 +108,7 @@
       <DependentUpon>ToolBarControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="IMain.cs" />
-    <Compile Include="MainFrameExpend.cs" />
+    <Compile Include="MainFrameExtend.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -118,7 +141,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

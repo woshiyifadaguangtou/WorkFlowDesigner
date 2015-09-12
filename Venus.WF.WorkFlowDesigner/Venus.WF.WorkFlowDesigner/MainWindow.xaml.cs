@@ -18,7 +18,7 @@ namespace Venus.WF.WorkFlowDesigner
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window,IMain
     {
         public MainWindow()
         {
@@ -26,7 +26,13 @@ namespace Venus.WF.WorkFlowDesigner
             this.GoFullScreen();
             InitEvent();
         }
+        public Panel RootPanel
+        {
+            get;
+        }
 
+        public UserControl CurrentMoveControl
+        { get; set; }
         private void InitEvent()
         {
             this.KeyDown += delegate(object sender, KeyEventArgs e)
@@ -44,6 +50,14 @@ namespace Venus.WF.WorkFlowDesigner
                     this.Close();
                 }
             };
+
+
+
+            this.RootGrid.MouseMove += (s, e) =>
+            {
+
+            };
+            
         }
     }
 }

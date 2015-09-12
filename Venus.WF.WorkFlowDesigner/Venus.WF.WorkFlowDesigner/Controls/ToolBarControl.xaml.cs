@@ -13,6 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Venus.WF.WorkFlowDesigner.Controls.ElementControls;
 
 namespace Venus.WF.WorkFlowDesigner.Controls
 {
@@ -71,9 +72,29 @@ namespace Venus.WF.WorkFlowDesigner.Controls
             stackPanel.Orientation = Orientation.Horizontal;
             stackPanel.VerticalAlignment = System.Windows.VerticalAlignment.Top;
 
+            #region 动态获取所有的IElementControl
 
+            var types =  this.GetType().Assembly.GetTypes();
+            var query = from Type t in types
+                        where t.GetInterface(typeof(IElementControl).FullName) != null
+                        select t;
+           
+            foreach (var type in query)
+            {
+                IElementControl elementControl = this.GetType().Assembly.CreateInstance(type.FullName) as IElementControl;
+                elementControl.InitEvent();
+                if (toolbarButtonControl.Tag != null && toolbarButtonControl.Tag.ToString() == elementControl.OwnerName)
+                {
+                    UserControl userControl = elementControl as UserControl;
+                    userControl.Height = 100;
+                    userControl.Width = 100;
+                    userControl.Margin = new Thickness(10, 10, 10, 10);
+                    stackPanel.Children.Add(userControl);
 
+                }
+            }
             this.ToolbarPanelGrid.Children.Add(stackPanel);
+            #endregion
         }
     }
 }

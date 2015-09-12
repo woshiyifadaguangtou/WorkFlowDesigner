@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:myControls="clr-namespace:Venus.WF.WorkFlowDesigner.Controls"
              mc:Ignorable="d" >
 	<UserControl.Resources>
 		<Storyboard x:Key="ST_MouseEnter">
@@ -31,5 +32,9 @@
             <TextBlock x:Name="MessageBlock" Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Left"></TextBlock>
             <TextBlock x:Name="CurrentDate"  Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Right"></TextBlock>
         </Grid>
+        <StackPanel Orientation="Horizontal">
+            <myControls:ImageButtonControl x:Name="NewFileButton" Height="75" Width="75"/>
+            <myControls:ImageButtonControl x:Name="OpenFileButton" Height="75" Width="75" />
+        </StackPanel>
     </Grid>
 </UserControl>

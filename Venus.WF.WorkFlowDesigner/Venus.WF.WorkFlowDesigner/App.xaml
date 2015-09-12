@@ -8,11 +8,24 @@
             <Setter Property="FontSize" Value="18"></Setter>
         </Style>
 
-        <Style x:Name="ElementControlTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Style x:Key="ElementControlTextBlockStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="Black"></Setter>
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         </Style>
+        
+        <Storyboard x:Key="ST_IElementControl_MouseEnter">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RootGrid">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="ST_IElementControl_MouseLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RootGrid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Application.Resources>
 </Application>

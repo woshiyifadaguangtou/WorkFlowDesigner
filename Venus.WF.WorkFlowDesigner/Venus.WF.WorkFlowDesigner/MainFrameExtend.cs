@@ -10,7 +10,7 @@ using System.Windows.Interop;
 
 namespace Venus.WF.WorkFlowDesigner
 {
-    public static class MainFrameExpend
+    public static class MainFrameExtend
     {
         private static Window fullWindow;
         private static WindowState windowState;

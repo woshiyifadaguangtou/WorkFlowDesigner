@@ -26,11 +26,11 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>
-    <Grid x:Name="RootGrid">
+    <Grid x:Name="RootGrid" Height="40">
         <StackPanel x:Name="SmallToolbarPanel" Panel.ZIndex="100" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,-10">
-            <myContols:ToolBarButtonControl Text="StartEvent" Width="120" Margin="10,0,0,0" FillColor="#FF46F1EA"/>
+            <myContols:ToolBarButtonControl Text="StartEvent" Width="120" Margin="10,0,0,0" FillColor="#FF46F1EA" Tag="StartEvent"/>
 
-            <myContols:ToolBarButtonControl Text="EndEvent" Width="120" Margin="10,0,0,0" FillColor="#FFF0915B"/>
+            <myContols:ToolBarButtonControl Text="EndEvent" Width="120" Margin="10,0,0,0" FillColor="#FFF0915B" Tag="EndEvent"/>
 
 
             <myContols:ToolBarButtonControl Text="Activity" Width="120" Margin="10,0,0,0" FillColor="#FF46F14E"/>
