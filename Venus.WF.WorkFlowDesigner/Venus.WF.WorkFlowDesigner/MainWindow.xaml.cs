@@ -33,6 +33,15 @@ namespace Venus.WF.WorkFlowDesigner
 
         public UserControl CurrentMoveControl
         { get; set; }
+
+        public UserControl CuurentMoveControl
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         private void InitEvent()
         {
             this.KeyDown += delegate(object sender, KeyEventArgs e)
