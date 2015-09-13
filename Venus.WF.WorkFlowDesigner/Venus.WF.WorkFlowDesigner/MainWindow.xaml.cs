@@ -68,5 +68,27 @@ namespace Venus.WF.WorkFlowDesigner
             };
             
         }
+
+
+        public Panel CanvasPanel
+        {
+            get { return this.CanvasObject; }
+        }
+
+        public List<UserControl> CurrentSelectionControlList
+        {
+            get;
+            set;
+        }
+
+        public List<Controls.ElementControls.IElementControl> CurrentSelectionElementControlList
+        {
+            get 
+            {
+                var query = from q in CurrentSelectionControlList
+                            select q as Controls.ElementControls.IElementControl;
+                return query.ToList();
+            }
+        }
     }
 }

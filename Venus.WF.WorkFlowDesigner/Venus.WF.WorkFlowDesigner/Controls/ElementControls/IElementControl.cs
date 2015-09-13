@@ -9,5 +9,7 @@ namespace Venus.WF.WorkFlowDesigner.Controls.ElementControls
     public interface IElementControl
     {
         string OwnerName { get; }
+
+        
     }
 }

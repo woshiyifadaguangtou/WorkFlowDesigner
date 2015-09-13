@@ -6,6 +6,6 @@
     <Grid x:Name="RootGrid">
         <myControl:MenuControl VerticalAlignment="Top"></myControl:MenuControl>
         <myControl:ToolBarControl VerticalAlignment="Bottom"></myControl:ToolBarControl>
-        <Canvas />
+        <Canvas x:Name="CanvasObject"/>
     </Grid>
 </Window>
